@@ -1,0 +1,54 @@
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+
+      <div class="card">
+        <header class="card-header">
+          <a routerLink="login" href="#" class="float-right btn btn-outline-primary mt-1">Log in</a>
+          <h4 class="card-title mt-2">Sign up</h4>
+        </header>
+        <article class="card-body">
+          <form #signUpForm="ngForm" (ngSubmit) = "register(signUpForm)">  
+
+            <div class="form-row">
+              <div class="col form-group">
+                <label for="firstName">First name </label>            
+
+                <input type="text" id="firstName" class="form-control"  placeholder="" [(ngModel)] = "user.firstName"  [ngModelOptions]="{standalone: true}" required="true">
+              </div> <!-- form-group end.// -->
+              <div class="col form-group">
+                <label for="lastName">Last name</label>
+                <input type="text" id="lastName" class="form-control" placeholder="" [(ngModel)] = "user.lastName"  [ngModelOptions]="{standalone: true}" required="true">
+              </div> <!-- form-group end.// -->
+            </div> <!-- form-row end.// -->
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" id="email" class="form-control" placeholder=""  [(ngModel)] = "user.email"  [ngModelOptions]="{standalone: true}" required="true" >
+              <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div> <!-- form-group end.// -->
+            
+            
+            <div class="form-group">
+              <label for="password">Create password</label>
+              <input class="form-control" id="password" type="password" [(ngModel)] = "user.password"  [ngModelOptions]="{standalone: true}" required="true" >
+            </div> <!-- form-group end.// -->
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary btn-block" > Register </button><!--(click)="register()"-->
+            </div> <!-- form-group// -->
+            <div class="success" *ngIf = "successMessage">
+              Uspesno ste se registrovali!
+            </div>
+            <div class="alert" *ngIf = "errorMessage">
+                {{errorMessage}}
+              </div>
+          </form>
+        </article> <!-- card-body end .// -->
+        <div class="border-top card-body text-center">Have an account? <a routerLink = "login" href="#">Log In</a></div>
+      </div> <!-- card.// -->
+    </div> <!-- col.//-->
+
+  </div> <!-- row.//-->
+
+
+</div>

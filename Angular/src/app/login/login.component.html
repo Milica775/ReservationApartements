@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <article class="card-body">
+          <a routerLink="registration" href="#" class="float-right btn btn-outline-primary">Sign up</a>
+          <h4 class="card-title mb-4 mt-1">Sign in</h4>
+          <form #logInForm="ngForm" (ngSubmit) = "login(logInForm)">
+            <div class="form-group">
+              <label>Your email</label>
+              <input type="email" class="form-control" placeholder="" [(ngModel)]="user.email"
+                [ngModelOptions]="{standalone: true}">
+            </div> <!-- form-group// -->
+            <div class="form-group">
+              
+              <label>Your password</label>
+              <input type="password" class="form-control" placeholder="" [(ngModel)]="user.password"
+                [ngModelOptions]="{standalone: true}">
+            </div> <!-- form-group// -->
+            
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary btn-block"> Login </button>
+            </div> <!-- form-group// -->
+          </form>
+        </article>
+      </div> <!-- card.// -->
+    </div>

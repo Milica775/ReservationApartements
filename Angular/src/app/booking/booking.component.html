@@ -1,0 +1,56 @@
+
+<div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+    
+            <div class="card">
+              <header class="card-header">
+                <h4 class="card-title mt-2">Booking</h4>
+              </header>
+              <article class="card-body">
+                <form>
+    
+                  <div class="form-row">
+                    <div class="col form-group">
+                      <label>Credit card </label>
+    
+                      <input type="text" class="form-control" required placeholder="" [(ngModel)] = "booking.creditCard"  [ngModelOptions]="{standalone: true}">
+                    </div> <!-- form-group end.// -->
+                      <div class="form-group">
+                          <label for="exampleFormControlSelect1">Room Type</label>
+                          <select class="form-control" id="exampleFormControlSelect1"placeholder="" [(ngModel)] = "booking.roomType"  [ngModelOptions]="{standalone: true}" >
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                          </select>
+                        </div>
+                  </div> <!-- form-row end.// -->
+                  <div class="form-group">
+                    <label>Check in Date</label>
+                    <input type="date" class="form-control"   [(ngModel)] = "booking.checkInDate"  [ngModelOptions]="{standalone: true}">
+                  </div> <!-- form-group end.// -->
+    
+    
+                  <div class="form-group">
+                    <label>Check out Date</label>
+                    <input class="form-control" type="date"  [(ngModel)] = "booking.checkOutDate"  [ngModelOptions]="{standalone: true}" >
+                  </div> <!-- form-group end.// -->
+    
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block" (click)="submit()" > Submit </button>
+                  </div> <!-- form-group// -->
+                  <div class="success" *ngIf = "successMessage">
+                      Uspesno ste rezervisali smestaj!
+                    </div>
+                </form>
+              </article> <!-- card-body end .// -->
+            </div> <!-- card.// -->
+          </div> <!-- col.//-->
+    
+        </div> <!-- row.//-->
+    
+    
+      </div>
+    
